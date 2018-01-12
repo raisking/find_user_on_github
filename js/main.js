@@ -22,7 +22,7 @@ $(document).ready(function(){
                $.each(repos, function(index, repo){
                    $('#repos').append(`
                     <div class="well">
-                        <div class="row">
+                        <div class="row row-div">
                             <div class ="col-md-7">
                                 <strong>${repo.name} </strong>: ${repo.description}
                             </div>
