@@ -16,7 +16,7 @@ $(document).ready(function(){
                     client_id: '1178504a091b4bbe37e9',
                     client_secret: '6973d5fa6672ac59142d3869f543e8493402e1ec',
                     sort: 'created: asc',
-                    // per_page: 6
+            
                 }
             }).done(function(repos){
                $.each(repos, function(index, repo){
@@ -27,12 +27,12 @@ $(document).ready(function(){
                                 <strong>${repo.name} </strong>: ${repo.description}
                             </div>
                             <div class ="col-md-3">
-                                <span class="label label-default">Forks: ${repo.forks_count}</span>
-                                <span class="label label-primary">Watchers: ${repo.watchers_count}</span>
-                                <span class="label label-success">Stars: ${repo.stargazers_count}</span>
+                                <span class="badge badge-warning">Forks: ${repo.forks_count}</span>
+                                <span class="badge badge-primary">Watchers: ${repo.watchers_count}</span>
+                                <span class="badge badge-success">Stars: ${repo.stargazers_count}</span>
                             </div>
                             <div class ="col-md-2">
-                                <a href="${repo.html_url}" target="_blank" class="btn btn-default">Repo Page</a>
+                                <a href="${repo.html_url}" target="_blank" class="btn btn-info">Repo Page</a><br>
                             </div>
                         </div>
                     </div>
@@ -51,17 +51,18 @@ $(document).ready(function(){
             <a target="_blank" class="btn btn-primary btn-block" href="${user.html_url}">View Profile</a>
             </div>
             <div class="col-md-9">
-            <span class="label label-default">Public Repos: ${user.public_repos}</span>
-            <span class="label label-primary">Public Gists: ${user.public_gists}</span>
-            <span class="label label-success">Followers: ${user.followers}</span>
-            <span class="label label-info">Following: ${user.following}</span>
+                <span class="badge badge-primary">Public Repos: ${user.public_repos}</span>
+                <span class="badge badge-warning">Public Gists: ${user.public_gists}</span>
+                <span class="badge badge-success">Followers: ${user.followers}</span>
+                <span class="badge badge-danger">Following: ${user.following}</span>
             <br>
             <ul class = "list-group">
-                <li class ="list-group-item">Company: ${user.company}</li>
                 <li class ="list-group-item">Blog: ${user.blog}</li>
                 <li class ="list-group-item">Location: ${user.location}</li>
                 <li class ="list-group-item">Member Since: ${user.created_at}</li>
-                <li class ="list-group-item">Repos URL: ${user.repos_url}</li>
+                <li class ="list-group-item">Repos URL: ${user.html_url}</li>
+                <li class ="list-group-item">Repos URL:  ${user.repos_url}</li>
+                <li class ="list-group-item">Repos URL: ${user.followers_url}</li>
             </ul>
             </div>
             
