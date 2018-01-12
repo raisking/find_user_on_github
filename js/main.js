@@ -19,7 +19,11 @@ $(document).ready(function(){
             }).done(function(repos){
                $.each(repos, function(index, repo){
                    $('#repos').append(`
-                    <div class
+                    <div class="well">
+                        <div class="row">
+
+                        </div>
+                    </div>
                    `);
                })
             })
